@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <link href="https://fonts.googleapis.com/css?family=Bree+Serif&display=swap" rel="stylesheet">
+        <title>Final</title>
+    </head>
+
+    <body>
+
+        <header>
+            <h1>Evaluate news article with NLP</h1>
+        </header>
+
+        <main>
+            <section>
+                <form class="" onsubmit="return Client.handleSubmit(event)">
+                  <div id="error-div"></div>
+                  <label for="url">Please enter a URL to an article or blogpost</label>
+                    <input id="url" type="url" name="url-input" placeholder="Enter valid URL">
+                    <input class="submit-button" type="submit" name="" value="Submit" onclick="return Client.handleSubmit(event)" onsubmit="return Client.handleSubmit(event)">
+                </form>
+            </section>
+
+            <section>
+                <div id="results">
+                  <h2>Form Results</h2>
+                  <div id="polarity-div"></div>
+                  <div id="subjectivity-div"></div>
+                  <div id="text-div"></div>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>Built by ethar elkarsh</p>
+        </footer>
+
+        <script>
+          // Check that service workers are supported
+          if ('serviceWorker' in navigator) {
+              // Use the window load event to keep the page load performant
+              window.addEventListener('load', () => {
+                  navigator.serviceWorker.register('/service-worker.js')
+                  .then(reg => console.log("Service worker registered successfully"));
+              });
+          }
+      </script>
+    </body>
+</html>
